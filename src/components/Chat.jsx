@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useChat } from "../context/ChatContext"
-
+import { useNavigate } from "react-router-dom"
 export default function Chat() {
   const [msg, setMsg] = useState("")
 
@@ -9,6 +9,8 @@ export default function Chat() {
 
   // 2. Buscamos el usuario activo
   const user = users.find(u => u.id === selectedUser)
+
+  const navigate = useNavigate()
 
   if (!user) {
     return (
@@ -33,7 +35,7 @@ export default function Chat() {
       time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
     }
 
-    // ✅ Actualizamos el estado de manera INMUTABLE
+    // ✅ Actualizamos el estado 
     const updatedUsers = users.map(u =>
       u.id === user.id
         ? { ...u, messages: [...u.messages, newMessage] }
@@ -43,6 +45,11 @@ export default function Chat() {
     setUsers(updatedUsers) // esto dispara el useEffect del contexto que guarda en localStorage
 
     setMsg("")
+  }
+
+  const handleLogout = ()=> {
+    localStorage.removeItem("isLoggedIn")
+    navigate("/")
   }
 
   return (
@@ -65,6 +72,7 @@ export default function Chat() {
           <button title="Gallery">🖼️</button>
           <button title="Settings">⚙️</button>
           <button title="Help">❓</button>
+          <button onClick={handleLogout}>cerrar sesión</button>
         </div>
       </header>
 
