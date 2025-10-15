@@ -1,0 +1,94 @@
+.help-page {
+  background-color: #ffffff;
+  color: #222222;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  line-height: 1.6;
+  padding: 0 20px 60px;
+  min-height: 100vh;
+}
+
+.help-header {
+  text-align: center;
+  padding: 50px 20px 30px;
+  border-bottom: 1px solid #dddddd;
+  position: relative;
+}
+
+.help-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #019cc7;
+}
+
+.help-header p {
+  color: #555555;
+  margin-top: 10px;
+  max-width: 650px;
+  margin-inline: auto;
+  font-size: 1rem;
+}
+.chat-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #019cc7;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+.chat-button:hover {
+  background-color: #34b8dd;
+}
+.help-content {
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.help-section {
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.help-section h2 {
+  color: #019cc7;
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+
+.help-section p {
+  margin-bottom: 12px;
+  color: #333333;
+  font-size: 0.97rem;
+}
+
+.help-section ul {
+  margin-left: 20px;
+  color: #555555;
+  list-style: disc;
+}
+
+
+.help-footer {
+  text-align: center;
+  color: #777777;
+  font-size: 14px;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #eeeeee;
+}
+
+.help-footer p {
+  margin: 6px 0;
+}
+
+.help-section:hover {
+  background-color: #f0fbfe;
+  transition: background-color 0.3s ease;
+}
