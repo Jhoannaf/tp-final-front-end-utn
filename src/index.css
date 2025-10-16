@@ -95,7 +95,14 @@
   align-items: center;
   background-color: #fff;
 }
-
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 26px;
+  cursor: pointer;
+}
 .chat-user {
   display: flex;
   align-items: center;
@@ -118,6 +125,7 @@
   border: none;
   cursor: pointer;
   font-size: 16px;
+  text-decoration: none;
 }
 
 .chat-messages {
@@ -131,6 +139,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  overflow: auto;
 }
 
 .message {
@@ -251,7 +260,6 @@ form .text-info {
   margin-top: 10px;
   font-size: 13px;
 }
-
 .cont-popup{
   background-color: #b6b6b659;
   position: fixed;
@@ -277,6 +285,9 @@ form .text-info {
   margin-top: 10px;
   color: white;
 }
+.back-contact-list{
+  display: none;
+}
 
 @media (max-width: 480px) {
   .sidebar {
@@ -288,5 +299,121 @@ form .text-info {
   }
   .popup{
     width: 80%;
+  }
+.menu-toggle {
+  display: block;
+  padding-right: 10px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+    .chat-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 10px;
+  }
+  .chat-user strong {
+    position: relative;
+    z-index: 1;
+  }
+  .chat-actions {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    text-align: center;
+  }
+  .chat-actions.active,
+  .chat-actions.open {
+    display: flex;
+  }
+  .chat-actions button
+  .chat-actions a {
+    width: 100%;
+    background: none;
+  }
+  .chat-actions a {
+    display: block;
+    text-decoration: none;
+  }
+  .chat-actions button:hover,
+  .chat-actions a:hover {
+    background-color: #add2f3;
+    border-radius: 5px;
+    width: 100%;
+  }
+    /* Muestra el botón de volver solo en móvil */
+  .back-contact-list {
+    display: block;
+    position: absolute;
+    top: 14px;
+    left: 10px;
+    background: none;
+  }
+  .btn-contact-list{
+    padding-left: 10px
+  }
+  /* Ajuste de chat y lista en modo móvil */
+  .contact-list {
+    background: #fff;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 50;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+  }
+
+  .contact-item:hover {
+    background: #f5f5f5;
+    cursor: pointer;
+  }
+
+  .contact-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  .back-contact-list {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2;
   }
 }

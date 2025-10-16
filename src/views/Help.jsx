@@ -60,7 +60,6 @@ export default function Help() {
       </main>
 
       <footer className="help-footer">
-        <p>Hecho con 💚 por el equipo de desarrollo de WhatsClone.</p>
         <p>Versión 1.0 — {new Date().getFullYear()}</p>
       </footer>
     </div>
